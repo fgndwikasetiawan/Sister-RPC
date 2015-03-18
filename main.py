@@ -3,7 +3,10 @@ from xmlrpclib import Binary
 import numpy as np
 import cv2
 
-server = xmlserver(('localhost', 9000), logRequests=True, allow_none=True)
+alamat = raw_input('Alamat bind: ')
+port = int(raw_input('Port: '))
+
+server = xmlserver((alamat, port), logRequests=True, allow_none=True)
 server.register_introspection_functions()
 server.register_multicall_functions()
 
